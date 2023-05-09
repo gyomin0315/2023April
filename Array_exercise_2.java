@@ -2,70 +2,54 @@ package myPackage;
 
 public class Array_exercise_2 {
 	
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
-		// 로또 시스템 만들어보자.
-		// i) 로또 번호를 담아둘 길이가 6개인 정수 타입 변수 생성.
-		// ii) 1~45까지의 번호 중에 하나를 뽑는다.
-		// iii) 만약 뽑은 번호가 배열에 있다면 다시 뽑고, 없다면 배열에 넣는다.
-		// iv) 6개의 번호를 다 뽑을 때 까지 반복한다.
-		// v) 6개의 번호 출력.
-
-		int full_number[] = new int[6];
-
-		int i=0;
+		System.out.println("첫번째 값 : " + args[0]);
+		System.out.println("두번째 값 : " + args[1]);
 		
-		int idx=0;
-
-		while(i<6)
-
+		// 다차원 배열
+		
+		int number[][] = new int[3][3];
+		
+		int k=0;
+		
+		for(int i=0;i<3;i++)
 		{
-			
-			boolean tf = true;
-
-			int number = (int) (Math.random()*45); // 0이 나올수도 있음에 주의.
-			
-			for(i=0;i<=idx;i++)
+			for(int j=0;j<3;j++)
 			{
-				if(full_number[i]==number)
-				{
-					tf = false;
-					break;
-				}
+				number[i][j] = k;
+				k++;
+				System.out.println("number [" + i + "][" + j + "] = " + k);
 			}
-
-			if(tf == true && number!=0)
-					
-			{
-				full_number[idx] = number;
-				idx++;
-			}
-			
-			if(idx==6) break;
-			
-			
-
 		}
 		
-		for(int j=0;j<6;j++)
-		{
-			System.out.println(full_number[j]);
-		}
+		int matrix[][] = {{1,2,3},{4,5,6},{7,8,9}}; // 이런식으로도 초기화 가능 !
+		
+		
 
-
+		
 	}
+	
+	
+
 
 }
 
-// 좀 어려웠어서 내일 천천히 다시 살펴보고 첨부터 끝까지 짜볼것. boolean을 이용한 방법 기억해놓을것. 내일 오름차순으로 정렬하는법까지 해결. 
-
-//출력 결과
+// 출력 결과
 /*
-42
-12
-3
-26
-19
-18
-
+첫번째 값 : Piano
+두번째 값 : Guitar
+number [0][0] = 1
+number [0][1] = 2
+number [0][2] = 3
+number [1][0] = 4
+number [1][1] = 5
+number [1][2] = 6
+number [2][0] = 7
+number [2][1] = 8
+number [2][2] = 9
  */
+
+// 전에 했던거 다시 나왔음 ! 초록색 실행 버튼 옆 화살표 -> Run configurations -> Arguments -> Program arguments 에서 입력하면 됨. 개행문자 기준으로 배열에 입력됨. 
+
+// 다차원배열을 C언어와 똑같음. 초기화 해주는 방법 기억하기. 
